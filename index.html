@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mekanism HCl Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+</head>
+<body>
+    <div class="pixel-border-container">
+        <header>
+            <img src="https://via.placeholder.com/64x64/8B4513/FFFFFF?text=Mek" alt="Mekanism Logo" class="logo">
+            <h1>Калькулятор Цены Хлороводорода (HCl)</h1>
+            <img src="https://via.placeholder.com/32x32/00FFFF/000000?text=HCl" alt="HCl Icon" class="item-icon">
+        </header>
+
+        <main class="calculator-container">
+            <div class="input-section">
+                <h2><img src="https://via.placeholder.com/24x24/00AA00/FFFFFF?text=💰" class="icon">Входные Данные</h2>
+                
+                <div class="input-group">
+                    <label for="brinePrice">
+                        <img src="https://via.placeholder.com/20x20/ADD8E6/000000?text=B" alt="Brine Icon" class="item-icon-small">
+                        Цена 128 вёдер Рассола (в алмазах):
+                    </label>
+                    <input type="number" id="brinePrice" value="10" min="0">
+                    <img src="https://via.placeholder.com/20x20/5DECF5/000000?text=💎" alt="Diamond Icon" class="item-icon-small">
+                </div>
+
+                <div class="input-group">
+                    <label for="energyPrice">
+                        <img src="https://via.placeholder.com/20x20/FFFF00/000000?text=⚡" alt="Energy Icon" class="item-icon-small">
+                        Цена 1 MJ (МегаДжоуля) энергии (в алмазах):
+                    </label>
+                    <input type="number" id="energyPrice" value="0.01" step="0.001" min="0">
+                    <img src="https://via.placeholder.com/20x20/5DECF5/000000?text=💎" alt="Diamond Icon" class="item-icon-small">
+                </div>
+
+                <button id="calculateButton" class="minecraft-button">
+                    <img src="https://via.placeholder.com/20x20/FFD700/000000?text=⚙️" alt="Gear Icon" class="item-icon-small">
+                    Рассчитать!
+                </button>
+            </div>
+
+            <div class="output-section">
+                <h2><img src="https://via.placeholder.com/24x24/4CAF50/FFFFFF?text=📊" class="icon">Результат Расчета</h2>
+                <p>Для производства 1 ведра (1000 mB) Хлороводорода (HCl) требуется:</p>
+                <ul>
+                    <li>1 ведро Рассола (Brine)</li>
+                    <li>1 ведро Воды (Water) - <i>считаем бесплатной</i></li>
+                    <li>Энергия: ~4.8 MJ
+                        <ul>
+                            <li>Электролитический сепаратор (Рассол): 0.4 MJ</li>
+                            <li>Электролитический сепаратор (Вода): 0.4 MJ</li>
+                            <li>Химический Инфузор (HCl): 4.0 MJ</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="resultDisplay" class="result-display">
+                    <p>Заполните данные и нажмите "Рассчитать".</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Создано для ценителей Mekanism! <img src="https://via.placeholder.com/16x16/FF0000/FFFFFF?text=❤️" alt="Heart"></p>
+            <p class="note">Примечание: Расчеты основаны на стандартных настройках Mekanism (без апгрейдов скорости/энергии в машинах). Потребление энергии может незначительно варьироваться.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
