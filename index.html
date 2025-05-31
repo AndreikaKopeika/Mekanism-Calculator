@@ -1,84 +1,168 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mekanism HCl Калькулятор</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор цены HCl в алмазах</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #3a7bd5, #00d2ff);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 auto 1rem;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+    .calculator {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    input {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 10px;
+    }
+    button {
+      background-color: #1e90ff;
+      border: none;
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background-color: #006fcd;
+      transform: scale(1.05);
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: rgba(0,0,0,0.3);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .tank-container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .tank {
+      width: 100px;
+      height: 220px;
+      border: 3px solid white;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      background-color: rgba(255,255,255,0.1);
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+    }
+    .fill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, #00ff99, #33cc33);
+      transition: height 1s ease-in-out;
+    }
+    .fill.hcl {
+      background: linear-gradient(to top, gold, #ffcc00);
+    }
+    .label {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .diamond {
+      text-align: center;
+    }
+    .diamond img {
+      width: 64px;
+      animation: sparkle 1.5s infinite ease-in-out;
+      filter: drop-shadow(0 0 4px white);
+    }
+    @keyframes sparkle {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.1) rotate(10deg); }
+    }
+  </style>
 </head>
 <body>
-    <div class="pixel-border-container">
-        <header>
-            <!-- Обновлено: Лого Mekanism -->
-            <img src="https://placehold.co/64x64/6A6A6A/FFFFFF/png?text=Mek&font=minecraftia" alt="Mekanism Logo" class="logo">
-            <h1>Калькулятор Цены Хлороводорода (HCl)</h1>
-            <!-- Обновлено: Иконка HCl -->
-            <img src="https://placehold.co/32x32/00AAAA/000000/png?text=HCl&font=minecraftia" alt="HCl Icon" class="item-icon">
-        </header>
+  <h1>⚗️ Калькулятор стоимости HCl</h1>
+  <div class="calculator">
+    <label for="hclAmount">💧 Количество HCl (mB):</label>
+    <input type="number" id="hclAmount" value="64000">
 
-        <main class="calculator-container">
-            <div class="input-section">
-                <!-- Обновлено: Иконка Входные Данные (Сундук) -->
-                <h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAW0lEQVR42mNkoDJgBFINkMYEYgNcCoAaUJsRjE9FqCAmJjqQrQBqICMexcFAEVIcRlYgB4wB6hANkMvZmFH47KLiAakyGIxGJIkg47GCsACZ3QwKkAsiANmjyMYEANVvLzFJWUbFAAAAAElFTkSuQmCC" class="icon" alt="Input Icon">Входные Данные</h2>
-                
-                <div class="input-group">
-                    <label for="brinePrice">
-                        <!-- Обновлено: Иконка Рассола (Ведро) -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR42mNgoBZgpJJgY2BgYNQBSpqRjYEBxM9ANAOUMzAwhZgYpgKZAaggrgGSTIqAGoYpQJoZGBgKGoYaYGFgNMDwz8DAUMoCAHkGE0ClASS9CQAvtCg950OhDAAAAABJRU5ErkJggg==" alt="Brine Icon" class="item-icon-small">
-                        Цена 128 вёдер Рассола (в алмазах):
-                    </label>
-                    <input type="number" id="brinePrice" value="10" min="0">
-                    <!-- Обновлено: Иконка Алмаза -->
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVQ4T2NkoDJgBFINkMYEYgNcCoAaUNsExgXMYGdgAPkfwXyQLMCEkP//Z2D4zwniAOwAWETMwHiABeO/GBiY/0NTgf8G1zBwIMuCFnBcIOD/r4HhPwzMAHKeDoCrBwZGRoYXYGdgYPhPzcnBwMAALsDEwMAKDOwMDMAMiCAPwMoKxgVmZgYGPgaG/xkYGBgY2EJMMDQU/gcTwwNc/+9hYPjPYGBgCLEBEDMwMLCAgf8ZGJiAAcwMDMCMIIwB9Pz/P4gLkOAMBgYGKgAcAPh4Q1j0oAcfAAAAAElFTkSuQmCC" alt="Diamond Icon" class="item-icon-small">
-                </div>
+    <label for="brinePrice">🧂 Цена 128 000 mB рассола в алмазах:</label>
+    <input type="number" id="brinePrice" value="8" step="0.1">
 
-                <div class="input-group">
-                    <label for="energyPrice">
-                        <!-- Обновлено: Иконка Энергии (Молния) -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAc0lEQVQ4T2NkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0y4P8/DMyABqRjYPhPYwBTQrMDC4NBBlIA4kM04P+/ycDAwAAGkNDMwACUCkQHLAyUhsjAwMDwH0gNVBYggckA6QBZDGSZDAysAgDGWBA20VqfngAAAABJRU5ErkJggg==" alt="Energy Icon" class="item-icon-small">
-                        Цена 1 MJ (МегаДжоуля) энергии (в алмазах):
-                    </label>
-                    <input type="number" id="energyPrice" value="0.01" step="0.001" min="0">
-                    <!-- Обновлено: Иконка Алмаза -->
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVQ4T2NkoDJgBFINkMYEYgNcCoAaUNsExgXMYGdgAPkfwXyQLMCEkP//Z2D4zwniAOwAWETMwHiABeO/GBiY/0NTgf8G1zBwIMuCFnBcIOD/r4HhPwzMAHKeDoCrBwZGRoYXYGdgYPhPzcnBwMAALsDEwMAKDOwMDMAMiCAPwMoKxgVmZgYGPgaG/xkYGBgY2EJMMDQU/gcTwwNc/+9hYPjPYGBgCLEBEDMwMLCAgf8ZGJiAAcwMDMCMIIwB9Pz/P4gLkOAMBgYGKgAcAPh4Q1j0oAcfAAAAAElFTkSuQmCC" alt="Diamond Icon" class="item-icon-small">
-                </div>
+    <button onclick="calculatePrice()">💎 Рассчитать</button>
 
-                <button id="calculateButton" class="minecraft-button">
-                    <!-- Обновлено: Иконка Шестеренки -->
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAy0lEQVQ4T2NkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0y4P8/DMyABqRjYPhPYwBTQrMDC4NBBlIA4kM04P+/ycDAwAAGkNDMwACUCkQHLAyUhsjAwMDwH0gNVBYggckA6QBZDGSZDAysAvwZGPhfJsAPgNQQHSDPgAYGhgEGxgGsDQwMMxgaGP7DwMACkCgYWyDRgBgGIIsBZFyA/0FpWBTLAWIhargBAxNDQvxfJsYG5n+R6MAsgGqQOcDCwCwGhv8YGFhBQfRkDAB1TjUuN9v19gAAAABJRU5ErkJggg==" alt="Gear Icon" class="item-icon-small">
-                    Рассчитать!
-                </button>
-            </div>
-
-            <div class="output-section">
-                 <!-- Обновлено: Иконка Результат Расчета (Лист бумаги) -->
-                <h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAUElEQVR42mNkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0yYDAYgBTQzMDA8B+IAciAyAZkMDAz/AdRAdkAEoBpDjQDCANAGggHAKR3JzFh6uDrAAAAAElFTkSuQmCC" class="icon" alt="Output Icon">Результат Расчета</h2>
-                <p>Для производства 1 ведра (1000 mB) Хлороводорода (HCl) требуется:</p>
-                <ul>
-                    <li>1 ведро Рассола (Brine)</li>
-                    <li>1 ведро Воды (Water) - <i>считаем бесплатной</i></li>
-                    <li>Энергия: ~4.8 MJ
-                        <ul>
-                            <li>Электролитический сепаратор (Рассол): 0.4 MJ</li>
-                            <li>Электролитический сепаратор (Вода): 0.4 MJ</li>
-                            <li>Химический Инфузор (HCl): 4.0 MJ</li>
-                        </ul>
-                    </li>
-                </ul>
-                <div id="resultDisplay" class="result-display">
-                    <p>Заполните данные и нажмите "Рассчитать".</p>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <!-- Обновлено: Иконка Сердечка -->
-            <p>Создано для ценителей Mekanism! <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAbUlEQVQ4T2NkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0y4P8/DMyABqRjYPhPYwBTQrMDC4NBBlIA4kM04P+/ycDAwAAGkNDMwACUCkQHLAyUhsjAwMDwH0gNVBYggckA6QBZDGSZDAysAgAePyB8y7x3tAAAAABJRU5ErkJggg==" alt="Heart"></p>
-            <p class="note">Примечание: Расчеты основаны на стандартных настройках Mekanism (без апгрейдов скорости/энергии в машинах). Потребление энергии может незначительно варьироваться.</p>
-        </footer>
+    <div class="tank-container">
+      <div>
+        <div class="tank">
+          <div class="fill" id="brineFill" style="height: 0%;"></div>
+        </div>
+        <div class="label">Рассол</div>
+      </div>
+      <div>
+        <div class="tank">
+          <div class="fill hcl" id="hclFill" style="height: 0%;"></div>
+        </div>
+        <div class="label">HCl</div>
+      </div>
+      <div class="diamond">
+        <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/76/Diamond_JE3_BE3.png" alt="Алмаз">
+        <div class="label" id="diamondDisplay">0 алм.</div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="result" id="result">
+      Тут появится результат...
+    </div>
+  </div>
+
+  <script>
+    function calculatePrice() {
+      const hclAmount = parseFloat(document.getElementById("hclAmount").value);
+      const brinePrice = parseFloat(document.getElementById("brinePrice").value);
+
+      const brinePerHCL = 10;
+      const brineNeeded = hclAmount * brinePerHCL;
+      const brinePricePerMb = brinePrice / 128000;
+      const totalCost = brineNeeded * brinePricePerMb;
+
+      const brineFill = Math.min((brineNeeded / 128000) * 100, 100);
+      const hclFill = Math.min((hclAmount / 64000) * 100, 100);
+
+      document.getElementById("brineFill").style.height = brineFill + "%";
+      document.getElementById("hclFill").style.height = hclFill + "%";
+      document.getElementById("diamondDisplay").innerText = totalCost.toFixed(2) + " алм.";
+
+      document.getElementById("result").innerHTML = `
+        Для <strong>${hclAmount.toLocaleString()} mB</strong> HCl потребуется <strong>${brineNeeded.toLocaleString()} mB</strong> рассола.<br>
+        Себестоимость: <strong>${totalCost.toFixed(2)}</strong> алмаза(-ов).
+      `;
+    }
+  </script>
 </body>
 </html>
