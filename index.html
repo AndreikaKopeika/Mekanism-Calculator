@@ -10,41 +10,50 @@
 <body>
     <div class="pixel-border-container">
         <header>
-            <img src="https://via.placeholder.com/64x64/8B4513/FFFFFF?text=Mek" alt="Mekanism Logo" class="logo">
+            <!-- Обновлено: Лого Mekanism -->
+            <img src="https://placehold.co/64x64/6A6A6A/FFFFFF/png?text=Mek&font=minecraftia" alt="Mekanism Logo" class="logo">
             <h1>Калькулятор Цены Хлороводорода (HCl)</h1>
-            <img src="https://via.placeholder.com/32x32/00FFFF/000000?text=HCl" alt="HCl Icon" class="item-icon">
+            <!-- Обновлено: Иконка HCl -->
+            <img src="https://placehold.co/32x32/00AAAA/000000/png?text=HCl&font=minecraftia" alt="HCl Icon" class="item-icon">
         </header>
 
         <main class="calculator-container">
             <div class="input-section">
-                <h2><img src="https://via.placeholder.com/24x24/00AA00/FFFFFF?text=💰" class="icon">Входные Данные</h2>
+                <!-- Обновлено: Иконка Входные Данные (Сундук) -->
+                <h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAW0lEQVR42mNkoDJgBFINkMYEYgNcCoAaUJsRjE9FqCAmJjqQrQBqICMexcFAEVIcRlYgB4wB6hANkMvZmFH47KLiAakyGIxGJIkg47GCsACZ3QwKkAsiANmjyMYEANVvLzFJWUbFAAAAAElFTkSuQmCC" class="icon" alt="Input Icon">Входные Данные</h2>
                 
                 <div class="input-group">
                     <label for="brinePrice">
-                        <img src="https://via.placeholder.com/20x20/ADD8E6/000000?text=B" alt="Brine Icon" class="item-icon-small">
+                        <!-- Обновлено: Иконка Рассола (Ведро) -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR42mNgoBZgpJJgY2BgYNQBSpqRjYEBxM9ANAOUMzAwhZgYpgKZAaggrgGSTIqAGoYpQJoZGBgKGoYaYGFgNMDwz8DAUMoCAHkGE0ClASS9CQAvtCg950OhDAAAAABJRU5ErkJggg==" alt="Brine Icon" class="item-icon-small">
                         Цена 128 вёдер Рассола (в алмазах):
                     </label>
                     <input type="number" id="brinePrice" value="10" min="0">
-                    <img src="https://via.placeholder.com/20x20/5DECF5/000000?text=💎" alt="Diamond Icon" class="item-icon-small">
+                    <!-- Обновлено: Иконка Алмаза -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVQ4T2NkoDJgBFINkMYEYgNcCoAaUNsExgXMYGdgAPkfwXyQLMCEkP//Z2D4zwniAOwAWETMwHiABeO/GBiY/0NTgf8G1zBwIMuCFnBcIOD/r4HhPwzMAHKeDoCrBwZGRoYXYGdgYPhPzcnBwMAALsDEwMAKDOwMDMAMiCAPwMoKxgVmZgYGPgaG/xkYGBgY2EJMMDQU/gcTwwNc/+9hYPjPYGBgCLEBEDMwMLCAgf8ZGJiAAcwMDMCMIIwB9Pz/P4gLkOAMBgYGKgAcAPh4Q1j0oAcfAAAAAElFTkSuQmCC" alt="Diamond Icon" class="item-icon-small">
                 </div>
 
                 <div class="input-group">
                     <label for="energyPrice">
-                        <img src="https://via.placeholder.com/20x20/FFFF00/000000?text=⚡" alt="Energy Icon" class="item-icon-small">
+                        <!-- Обновлено: Иконка Энергии (Молния) -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAc0lEQVQ4T2NkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0y4P8/DMyABqRjYPhPYwBTQrMDC4NBBlIA4kM04P+/ycDAwAAGkNDMwACUCkQHLAyUhsjAwMDwH0gNVBYggckA6QBZDGSZDAysAgDGWBA20VqfngAAAABJRU5ErkJggg==" alt="Energy Icon" class="item-icon-small">
                         Цена 1 MJ (МегаДжоуля) энергии (в алмазах):
                     </label>
                     <input type="number" id="energyPrice" value="0.01" step="0.001" min="0">
-                    <img src="https://via.placeholder.com/20x20/5DECF5/000000?text=💎" alt="Diamond Icon" class="item-icon-small">
+                    <!-- Обновлено: Иконка Алмаза -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVQ4T2NkoDJgBFINkMYEYgNcCoAaUNsExgXMYGdgAPkfwXyQLMCEkP//Z2D4zwniAOwAWETMwHiABeO/GBiY/0NTgf8G1zBwIMuCFnBcIOD/r4HhPwzMAHKeDoCrBwZGRoYXYGdgYPhPzcnBwMAALsDEwMAKDOwMDMAMiCAPwMoKxgVmZgYGPgaG/xkYGBgY2EJMMDQU/gcTwwNc/+9hYPjPYGBgCLEBEDMwMLCAgf8ZGJiAAcwMDMCMIIwB9Pz/P4gLkOAMBgYGKgAcAPh4Q1j0oAcfAAAAAElFTkSuQmCC" alt="Diamond Icon" class="item-icon-small">
                 </div>
 
                 <button id="calculateButton" class="minecraft-button">
-                    <img src="https://via.placeholder.com/20x20/FFD700/000000?text=⚙️" alt="Gear Icon" class="item-icon-small">
+                    <!-- Обновлено: Иконка Шестеренки -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAy0lEQVQ4T2NkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0y4P8/DMyABqRjYPhPYwBTQrMDC4NBBlIA4kM04P+/ycDAwAAGkNDMwACUCkQHLAyUhsjAwMDwH0gNVBYggckA6QBZDGSZDAysAvwZGPhfJsAPgNQQHSDPgAYGhgEGxgGsDQwMMxgaGP7DwMACkCgYWyDRgBgGIIsBZFyA/0FpWBTLAWIhargBAxNDQvxfJsYG5n+R6MAsgGqQOcDCwCwGhv8YGFhBQfRkDAB1TjUuN9v19gAAAABJRU5ErkJggg==" alt="Gear Icon" class="item-icon-small">
                     Рассчитать!
                 </button>
             </div>
 
             <div class="output-section">
-                <h2><img src="https://via.placeholder.com/24x24/4CAF50/FFFFFF?text=📊" class="icon">Результат Расчета</h2>
+                 <!-- Обновлено: Иконка Результат Расчета (Лист бумаги) -->
+                <h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAUElEQVR42mNkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0yYDAYgBTQzMDA8B+IAciAyAZkMDAz/AdRAdkAEoBpDjQDCANAGggHAKR3JzFh6uDrAAAAAElFTkSuQmCC" class="icon" alt="Output Icon">Результат Расчета</h2>
                 <p>Для производства 1 ведра (1000 mB) Хлороводорода (HCl) требуется:</p>
                 <ul>
                     <li>1 ведро Рассола (Brine)</li>
@@ -64,7 +73,8 @@
         </main>
 
         <footer>
-            <p>Создано для ценителей Mekanism! <img src="https://via.placeholder.com/16x16/FF0000/FFFFFF?text=❤️" alt="Heart"></p>
+            <!-- Обновлено: Иконка Сердечка -->
+            <p>Создано для ценителей Mekanism! <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAbUlEQVQ4T2NkoDJgBFINkGNhYPgPxGHUhcgcTADkGEwN5D0y4P8/DMyABqRjYPhPYwBTQrMDC4NBBlIA4kM04P+/ycDAwAAGkNDMwACUCkQHLAyUhsjAwMDwH0gNVBYggckA6QBZDGSZDAysAgAePyB8y7x3tAAAAABJRU5ErkJggg==" alt="Heart"></p>
             <p class="note">Примечание: Расчеты основаны на стандартных настройках Mekanism (без апгрейдов скорости/энергии в машинах). Потребление энергии может незначительно варьироваться.</p>
         </footer>
     </div>
