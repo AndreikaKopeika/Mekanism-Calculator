@@ -1,28 +1,26 @@
 body {
     font-family: 'Minecraftia', 'Courier New', Courier, monospace;
-    background-image: url('https://i.imgur.com/aY5kXt9.png'); /* Minecraft dirt background */
-    background-color: #3B3B3B; /* Fallback */
-    background-size: 64px 64px;
-    background-repeat: repeat;
+    /* Обновлено: Простой темно-серый фон */
+    background-color: #303030; 
     color: #FFFFFF;
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to top for long content */
+    align-items: flex-start; 
     min-height: 100vh;
-    image-rendering: pixelated; /* Crucial for pixel art feel */
+    image-rendering: pixelated; 
 }
 
 .pixel-border-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
-    border: 8px solid #5C5C5C; /* Outer border */
-    outline: 4px solid #A0A0A0; /* Inner border, simulating Minecraft UI */
-    box-shadow: 0 0 0 4px #3B3B3B, 0 0 15px rgba(0,0,0,0.5); /* Even more border + shadow */
+    background-color: rgba(0, 0, 0, 0.7); 
+    border: 8px solid #5C5C5C; 
+    outline: 4px solid #A0A0A0; 
+    box-shadow: 0 0 0 4px #3B3B3B, 0 0 15px rgba(0,0,0,0.5); 
     padding: 20px;
     max-width: 800px;
     width: 90%;
-    border-radius: 2px; /* Slight rounding for effect */
+    border-radius: 2px; 
 }
 
 header {
@@ -38,7 +36,7 @@ header {
 
 header h1 {
     font-size: 2em;
-    color: #FFAA00; /* Mekanism Orange/Yellow */
+    color: #FFAA00; 
     text-shadow: 2px 2px #000000;
     margin: 0;
 }
@@ -58,12 +56,12 @@ header h1 {
 }
 
 .item-icon-small {
-    width: 20px;
-    height: 20px;
+    width: 16px; /* Скорректировано под размер Base64 иконок */
+    height: 16px; /* Скорректировано под размер Base64 иконок */
     image-rendering: pixelated;
     vertical-align: middle;
     margin-right: 5px;
-    border: 1px solid #A0A0A0;
+    /* Убрал border с маленьких иконок, т.к. Base64 могут его уже содержать или он не нужен */
 }
 
 .calculator-container {
@@ -79,7 +77,7 @@ header h1 {
 }
 
 .input-section, .output-section {
-    background-color: rgba(60, 60, 60, 0.8); /* Darker inset background */
+    background-color: rgba(60, 60, 60, 0.8); 
     padding: 20px;
     border: 4px solid #5C5C5C;
     outline: 2px solid #A0A0A0;
@@ -88,7 +86,7 @@ header h1 {
 
 .input-section h2, .output-section h2 {
     font-size: 1.5em;
-    color: #55FFFF; /* Cyan */
+    color: #55FFFF; 
     text-shadow: 1px 1px #000000;
     margin-top: 0;
     padding-bottom: 10px;
@@ -98,7 +96,7 @@ header h1 {
 }
 
 .icon {
-    width: 24px;
+    width: 24px; /* Размер иконок заголовков секций */
     height: 24px;
     margin-right: 10px;
     image-rendering: pixelated;
@@ -119,20 +117,20 @@ header h1 {
 
 .input-group input[type="number"] {
     font-family: 'Minecraftia', monospace;
-    width: calc(100% - 28px - 4px); /* Full width minus padding and border */
+    width: calc(100% - 28px - 4px); 
     padding: 8px;
     background-color: #3B3B3B;
     border: 2px solid #A0A0A0;
     color: #FFFFFF;
     font-size: 1em;
-    margin-right: 5px; /* Space for icon */
+    margin-right: 5px; 
 }
 
 .minecraft-button {
     font-family: 'Minecraftia', monospace;
-    background-color: #7D7D7D; /* Button gray */
+    background-color: #7D7D7D; 
     color: #FFFFFF;
-    border: 2px outset #A0A0A0; /* 3D effect */
+    border: 2px outset #A0A0A0; 
     padding: 10px 20px;
     font-size: 1.2em;
     text-shadow: 1px 1px #000000;
@@ -156,7 +154,7 @@ header h1 {
 .result-display {
     margin-top: 20px;
     padding: 15px;
-    background-color: #2A2A2A; /* Very dark for result display */
+    background-color: #2A2A2A; 
     border: 2px solid #A0A0A0;
     min-height: 50px;
 }
@@ -167,7 +165,7 @@ header h1 {
 }
 
 .result-display strong {
-    color: #FFAA00; /* Highlight color for important numbers */
+    color: #FFAA00; 
 }
 
 .result-display .cost-breakdown {
@@ -183,10 +181,12 @@ ul {
 
 ul li {
     margin-bottom: 5px;
-    background-image: url('https://via.placeholder.com/16x16/C6C6C6/000000?text=+'); /* Custom bullet */
+    /* Обновлено: Маркер списка - светлый пиксельный квадрат */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAFElEQVQYlWN48eLFfx79+vUDIyMjgwMAColC5z62yH8AAAAASUVORK5CYII='); 
     background-repeat: no-repeat;
-    background-position: 0 4px;
-    padding-left: 25px; /* Space for custom bullet */
+    background-position: 0 5px; /* Немного скорректировал позицию */
+    padding-left: 18px; /* Увеличил отступ для маркера */
+    image-rendering: pixelated; /* Для маркера */
 }
 
 ul ul {
@@ -195,7 +195,8 @@ ul ul {
 }
 
 ul ul li {
-     background-image: url('https://via.placeholder.com/16x16/888888/000000?text=-'); /* Sub-bullet */
+     /* Обновлено: Маркер под-списка - темный пиксельный квадрат */
+     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAEklEQVQYlWNwcHD8x8DAwMAIYoAAAE70BIdNR8kAAAAASUVORK5CYII=');
 }
 
 
@@ -214,8 +215,10 @@ footer .note {
     margin-top: 10px;
 }
 
-/* Замените URL-ы на реальные спрайты или Base64 */
-/* Например, для алмаза: */
-/* .diamond-icon { content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA...'); } */
-/* Иконки взяты с placeholder.com для примера. Лучше использовать настоящие пиксельные иконки. */
-/* Например, с https://minecraft.fandom.com/wiki/Diamond или нарисовать свои. */
+img { /* Общее правило для всех img для лучшего пиксельного рендеринга */
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering: -o-crisp-edges;           /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (Chrome, Safari) */
+    image-rendering: pixelated;                /* Стандарт */
+    -ms-interpolation-mode: nearest-neighbor;  /* IE */
+}
